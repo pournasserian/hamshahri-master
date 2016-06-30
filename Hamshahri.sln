@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HamshahriScraper", "Hamshahri\HamshahriScraper.vbproj", "{69912187-71D9-4A37-9B28-A21FE60C97D8}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HamshahriContentParser", "HamshahriContentParser\HamshahriContentParser.vbproj", "{CE0F6DFE-4749-40DE-A3E9-C2C71BAA3E6A}"
@@ -8,6 +10,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Test", "Test\Test.vbproj", "{142EE4BA-45EF-4BC9-BF3E-F45123A5653A}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Common", "Common\Common.vbproj", "{1CE265D5-AF2E-4AC5-8E79-A2D2B375CDC6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Analyzer", "Analyzer\Analyzer.vbproj", "{08DB5D67-6BA3-4AC9-8D52-B1D96A131BC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{1CE265D5-AF2E-4AC5-8E79-A2D2B375CDC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CE265D5-AF2E-4AC5-8E79-A2D2B375CDC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CE265D5-AF2E-4AC5-8E79-A2D2B375CDC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08DB5D67-6BA3-4AC9-8D52-B1D96A131BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08DB5D67-6BA3-4AC9-8D52-B1D96A131BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08DB5D67-6BA3-4AC9-8D52-B1D96A131BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08DB5D67-6BA3-4AC9-8D52-B1D96A131BC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

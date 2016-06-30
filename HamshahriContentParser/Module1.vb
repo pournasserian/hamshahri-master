@@ -10,16 +10,23 @@ Module Module1
 
         While Not String.IsNullOrEmpty(contentId)
 
-            Dim htmlContent As String = parser.GetHtmlContent(contentId)
-            Dim article As NewsArticle = parser.CreateArticle(contentId, htmlContent)
+            Try
+
+                Dim htmlContent As String = parser.GetHtmlContent(contentId)
+                Dim article As NewsArticle = parser.CreateArticle(contentId, htmlContent)
+
+                parser.Save(article)
+
+                Console.WriteLine(contentId & ": OK!")
+
+            Catch ex As Exception
+                Console.WriteLine(contentId & ": Error!")
+            End Try
+
 
             contentId = parser.GetHtmlContentId
 
         End While
-
-
-
-
 
 
     End Sub

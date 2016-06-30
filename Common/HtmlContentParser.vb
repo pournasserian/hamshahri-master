@@ -5,14 +5,20 @@ Public Class HtmlContentParser
 
     Public ReadOnly Property SourceHtmlContentPath As String
     Public ReadOnly Property DestinationHtmlContentPath As String
+    Public ReadOnly Property NewsArticleContentPath As String
 
     Public Sub New()
 
         SourceHtmlContentPath = GetRootPath() & "Raw\"
         DestinationHtmlContentPath = _SourceHtmlContentPath & "Done\"
+        NewsArticleContentPath = GetRootPath() & "NewsArticles\"
 
         If Not System.IO.Directory.Exists(DestinationHtmlContentPath) Then
             System.IO.Directory.CreateDirectory(DestinationHtmlContentPath)
+        End If
+
+        If Not System.IO.Directory.Exists(NewsArticleContentPath) Then
+            System.IO.Directory.CreateDirectory(NewsArticleContentPath)
         End If
 
     End Sub
@@ -76,6 +82,19 @@ Public Class HtmlContentParser
 
     End Function
 
+    Public Sub Save(article As NewsArticle)
+
+        If String.IsNullOrEmpty(article.Title) Then
+            Exit Sub
+        End If
+
+        Dim jsonString As String = Helper.Serialize(article)
+        Dim fileName As String = NewsArticleContentPath & article.Id.ToString & ".json"
+
+        System.IO.File.WriteAllText(fileName, jsonString)
+
+    End Sub
+
     Private Function ExtractContent(htmlNode As HtmlNode) As String
 
         Dim content As String = ""
@@ -87,7 +106,7 @@ Public Class HtmlContentParser
             If contentNode.Count > 0 Then
 
                 For Each item In contentNode
-                    content &= Helper.ConvertHtmlToText(item.InnerText) & vbCrLf
+                    content &= Helper.ConvertHtmlToText(item.InnerText)
                 Next
 
 
